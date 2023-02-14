@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 'use strict';
-import fs from "fs";
-import path from "path";
-import os from "os";
+
+const fs = require("fs");
+const path = require("path");
+const os = require("os");
 
 const prefsJsonPath = path.join(os.homedir(), '/Library/Application Support/Alfred/prefs.json');
 const prefsPath = JSON.parse(fs.readFileSync(prefsJsonPath)).current;

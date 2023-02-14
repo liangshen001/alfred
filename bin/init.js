@@ -1,10 +1,9 @@
 #!/usr/bin/env node
 'use strict';
 
-import fs from "fs";
-import path from "path";
-import os from "os";
-import * as child_process from "child_process";
+const fs = require("fs");
+const path = require("path");
+const os = require("os");
 
 let projectPath = path.resolve(process.cwd(), '../../../');
 let infoPath = path.resolve(projectPath, 'info.plist');
