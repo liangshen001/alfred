@@ -21,8 +21,7 @@
     "test": "jest",
     "build": "rollup -c --bundleConfigAsCjs",
     "postinstall": "alfred-init",
-    "preuninstall": "alfred-cleanup",
-    "prepublish": "alfred-sync"
+    "preuninstall": "alfred-cleanup"
   },
   "keywords": [],
   "author": "Wang Liang",
