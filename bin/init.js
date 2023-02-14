@@ -13,7 +13,7 @@ if (!fs.existsSync(infoPath)) {
     if (!fs.existsSync(packageJsonPath)) {
         return;
     }
-    const data = fs.readFileSync(path.resolve(projectPath, 'package.json'), 'UTF-8').toString();
+    const data = fs.readFileSync(packageJsonPath, 'UTF-8').toString();
     if (data) {
         let config = JSON.parse(data);
         const packageName = config.name || '';
