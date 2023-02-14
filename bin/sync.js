@@ -27,9 +27,6 @@ if (!fs.existsSync(infoPath)) {
 }
 
 const prefsJsonPath = path.join(os.homedir(), '/Library/Application Support/Alfred/prefs.json');
-if (!fs.existsSync(prefsJsonPath)) {
-    return;
-}
 const prefsPath = JSON.parse(fs.readFileSync(prefsJsonPath)).current;
 const workflowDir = path.join(prefsPath, 'workflows');
 

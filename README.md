@@ -13,24 +13,14 @@ npm init -y
 
 此时package.json 的name也就是项目名为test
 
-### 需要修改package.json
-
-添加字段  因为本插件使用ES模块方式
-```json
-{
-  "type": "module"
-}
-```
-
 ### Install 
 ```
 npm install @liangshen/alfred --save
 ```
 1.初始化: 会读取package.json 中的name、author、description、keywords等字段来生成info.plist文件初始化alfred的工作流(如果存在info.plist文件则不初始化)
-2.会为项目创建软链到alfred workflow目录下（主要用于发布前的开发调试）
+2.会为项目创建软链到alfred workflow目录下（主要用于发布前的开发调试阶段）
 
 ### 添加入口文件
-
 
 ```
 touch index.js

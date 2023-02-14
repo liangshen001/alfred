@@ -4,7 +4,9 @@ import {Output, OutputItem} from "./output";
 class Alfred {
     readonly params: string[] = process.argv.filter((_v, index) => index > 1)
     readonly input: string = process.argv.length > 2 ? process.argv[process.argv.length - 1] : ''
-    readonly env = new AlfredEnv()
+    get env(): AlfredEnv {
+        return process.env as any;
+    }
 
     output(output: Output, inputMatch?: ('title' | 'subtitle' | 'uid' | 'arg' | 'quicklookurl')[]) {
         const input = this.input?.toLocaleLowerCase()
@@ -23,43 +25,27 @@ class Alfred {
     }
 
 }
-
-class AlfredEnv {
-    readonly preferences: string = process.env['alfred_preferences']!
-    readonly preferencesLocalhash: string = process.env['alfred_preferences_localhash']!
-    readonly theme: string = process.env['alfred_theme']!
-    readonly themeBackground: string = process.env['alfred_theme_background']!
-    readonly themeSelectionBackground: string = process.env['alfred_theme_selection_background']!
-    readonly ThemeSubtext: string = process.env['alfred_theme_subtext']!
-    readonly version: string = process.env['alfred_version']!
-    readonly versionBuild: string = process.env['alfred_version_build']!
-
-    readonly workflowBundleid: string = process.env['alfred_workflow_bundleid']!
-    readonly workflowCache: string = process.env['alfred_workflow_cache']!
-    readonly workflowData: string = process.env['alfred_workflow_data']!
-    readonly workflowName: string = process.env['alfred_workflow_name']!
-    readonly workflowUid: string = process.env['alfred_workflow_uid']!
-    readonly workflowVersion?: string = process.env['alfred_workflow_version']
-    readonly debug: boolean = process.env['alfred_debug'] === '1'
-
-    get(key: string): string | undefined {
-        return process.env[key];
-    }
+interface AlfredEnv {
+    alfred_preferences: string;
+    alfred_preferences_localhash: string;
+    alfred_theme: string;
+    alfred_theme_background: string;
+    alfred_theme_selection_background: string;
+    alfred_theme_subtext: string;
+    alfred_version: string;
+    alfred_version_build: string;
+    alfred_workflow_bundleid: string;
+    alfred_workflow_cache: string;
+    alfred_workflow_data: string;
+    alfred_workflow_name: string;
+    alfred_workflow_uid: string;
+    alfred_workflow_version: string;
+    alfred_debug: '1' | '0';
 }
 
 
 
 const alfred = new Alfred()
 export default alfred
-export {Output, OutputItem}
-
-// function pify<B, T extends ((...p: infer B) => void)>(o: T) {
-//     return null as T;
-// }
-//
-// const a = pify(fs.readFile)
-//
-// function test<T extends () => void>(...p: T[]) {
-//     console.log(p);
-// }
+export {Output, OutputItem, AlfredEnv}
 
