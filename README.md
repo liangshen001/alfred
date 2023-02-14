@@ -25,7 +25,7 @@ npm install @liangshen/alfred --save
 ```
 touch index.js
 ```
-
+ 
 index.js
 ```typescript
 import alfred from '@liangshen/alfred'
