@@ -2,7 +2,7 @@
   "name": "@liangshen/alfred",
   "version": "1.2.1",
   "description": "Creat, Develop and Publish Alfred workflows",
-  "types": "./lib/types/index.d.ts",
+  "types": "./lib/index.d.ts",
   "main": "./lib/index.cjs.js",
   "module": "./lib/index.esm.js",
   "bin": {
