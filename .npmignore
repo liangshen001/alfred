@@ -1,7 +1,0 @@
-.git
-.idea
-.DS_Store
-node_modules/
-/src
-tsconfig.json
-jest.config.ts

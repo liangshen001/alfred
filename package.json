@@ -1,10 +1,10 @@
 {
   "name": "@liangshen/alfred",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Creat, Develop and Publish Alfred workflows",
-  "types": "./dist/types/index.d.ts",
-  "main": "./dist/index.cjs.js",
-  "module": "./dist/index.esm.js",
+  "types": "./lib/types/index.d.ts",
+  "main": "./lib/index.cjs.js",
+  "module": "./lib/index.esm.js",
   "bin": {
     "run-node": "bin/run-node.sh",
     "alfred-init": "bin/init.js",
@@ -12,8 +12,7 @@
     "alfred-sync": "bin/sync.js"
   },
   "files": [
-    "dist",
-    "package.json",
+    "lib",
     "README.md"
   ],
   "repository": "liangshen001/alfred",
@@ -27,7 +26,6 @@
   "author": "Wang Liang",
   "license": "ISC",
   "devDependencies": {
-    "@liangshen/tsconfig": "^1.0.3",
     "@rollup/plugin-typescript": "^11.0.0",
     "@types/jest": "^28.1.2",
     "@types/node": "^18.0.0",
